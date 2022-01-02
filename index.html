@@ -10,27 +10,30 @@
 </head>
 <body>
     <div id="app">
+        <div class="scroll-up-btn" @click="top">
+            <i class="fas fa-angle-up"></i>
+        </div>
         <header>
                 <a href="./" id="logo">LiChengYan</a>
                 <nav :class="{active:openMenu}">
-                    <a href="javascript:;">home</a>
-                    <a href="javascript:;">about</a>
-                    <a href="javascript:;">services</a>
-                    <a href="javascript:;">skills</a>
-                    <a href="javascript:;">teams</a>              
+                    <a href="#home">home</a>
+                    <a href="#about">about</a>
+                    <a href="#services">services</a>
+                    <a href="#skills">skills</a>
+                    <a href="#works">works</a>              
                 </nav>       
                 <div class="menu-btn" @click="openMenuFn">
                     <i class="fas fa-bars" :class="{active:openMenu}"></i>
                 </div>
         </header>
         
-        <section class="home">
+        <section class="home" id="home">
             <div class="max-width">
                <div class="home-content">
                     <div class="text-1">Hello , my name is</div>
                     <div class="text-2">Li-Cheng-Yan</div>
                     <div class="text-3">I come from <span>Taoyuan</span></div>
-                    <a href="javascript:;">Hire Me</a>
+                    <a href="javascript:;" @click="see">See More</a>
                </div>
             </div>
         </section>
@@ -46,7 +49,7 @@
                     </div>
                     <div class="column right">
                         <div class="text">I'm LiChengYan and I come from <span>Taoyuan</span></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus provident, quia ipsum aperiam similique id accusamus velit aliquid, modi numquam ex assumenda. Aspernatur, numquam odio veritatis fugiat aut iusto fuga eligendi nihil ipsa temporibus autem reiciendis animi nostrum est beatae esse? Odio quaerat sit porro iste modi ratione, molestias, dolores laborum quia quod ipsam excepturi sapiente dolorum numquam assumenda.</p>
+                        <p>姓名:李承諺(Li-Cheng-Yan)<br>生日:1997/08/22<br>中原大學研究所資管所(2020~2022)</p>
                         <a href="#">Download CV</a>
                     </div>
             </div>
@@ -70,14 +73,14 @@
                     <div class="card">
                         <div class="box">
                             <i class="fas fa-chart-line"></i>
-                            <div class="text">Advertising</div>
+                            <div class="text">Website setup</div>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis eum officiis aliquam maxime aspernatur at laboriosam ipsa aperiam in culpa repellendus sequi dolorem fugiat molestias neque cumque porro, cupiditate molestiae?</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="box">
                             <i class="fas fa-code"></i>
-                            <div class="text">Apps Design</div>
+                            <div class="text">Artificial intelligence</div>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis eum officiis aliquam maxime aspernatur at laboriosam ipsa aperiam in culpa repellendus sequi dolorem fugiat molestias neque cumque porro, cupiditate molestiae?</p>
                         </div>
                     </div>
@@ -93,89 +96,45 @@
                         <div class="text">
                             My creative skills & expriences.
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel tempora blanditiis eligendi quisquam, a suscipit est, cumque dolorem reiciendis ex consequatur. Sit et nisi ut quos dignissimos ex, nemo dolor at ullam expedita architecto cumque corrupti, est quasi molestiae quia cum voluptas dolores quibusdam neque aliquam ab blanditiis. Recusandae optio dignissimos dolor veritatis officiis deleniti nihil, alias veniam beatae!</p>
+                        <li>中原大學碩士班</li>
+                        <li>憶旺智慧工程師</li>
+                        <li>中原大學程式設計講師</li>
+                        <li>Python程式設計家教</li>
+                        <li>中原大學多媒體程式設計助教</li>
+                        <li>Python程式設計助教</li>
+                        <li>Microsoft Python證照</li>
+                        <li>中原大學畢業專題第三名</li>
+                        <li>全國資訊研討會第五名</li>
+                        <li>中原大學優良課業守護天使</li>
+                        <li>李紹陽數學輔導老師</li>
+                        <li>三星samsung活動督導</li>
                         <a href="#">Read more</a>
                     </div>
                     <div class="column right">
-                        <div class="bars">
+                        <div class="bars" v-for="item in skills">
                             <div class="infor">
-                                <span>HTML</span>
-                                <span>90%</span>
+                                <span>{{item.name}}</span>
+                                <span>{{item.bars}}</span>
                             </div>
-                            <div class="line html"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="infor">
-                                <span>CSS</span>
-                                <span>50%</span>
-                            </div>
-                            <div class="line css"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="infor">
-                                <span>JavaScript</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="line js"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="infor">
-                                <span>PHP</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="line php"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="infor">
-                                <span>MySQL</span>
-                                <span>60%</span>
-                            </div>
-                            <div class="line mysql"></div>
+                            <div :class="['line', item.name]"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="teams" id="teams">
+        <section class="works" id="works">
             <div class="max-width">
-                <h2 class="title">My teams</h2>
+                <h2 class="title">My works</h2>
                 <div class="carousel">
-                    <div class="card">
+                    <a v-for="item in worksCard" :href="item.href" class="card" >
                         <div class="box">
-                            <img src="./images/test.jpg" alt="">
-                            <div class="text">Someone name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem eum. Nobis odio itaque vitae impedit aliquam ratione minima? Itaque dolorem odit, delectus excepturi fugit maiores numquam rem.</p>
+                            <img :src="item.imgsrc" alt="">
+                            <div class="text">{{item.title}}</div>
+                            <p>{{item.content}}</p>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <img src="./images/test.jpg" alt="">
-                            <div class="text">Someone name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem eum. Nobis odio itaque vitae impedit aliquam ratione minima? Itaque dolorem odit, delectus excepturi fugit maiores numquam rem.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <img src="./images/test.jpg" alt="">
-                            <div class="text">Someone name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem eum. Nobis odio itaque vitae impedit aliquam ratione minima? Itaque dolorem odit, delectus excepturi fugit maiores numquam rem.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <img src="./images/test.jpg" alt="">
-                            <div class="text">Someone name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem eum. Nobis odio itaque vitae impedit aliquam ratione minima? Itaque dolorem odit, delectus excepturi fugit maiores numquam rem.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <img src="./images/test.jpg" alt="">
-                            <div class="text">Someone name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem eum. Nobis odio itaque vitae impedit aliquam ratione minima? Itaque dolorem odit, delectus excepturi fugit maiores numquam rem.</p>
-                        </div>
-                    </div>
+                    </a>
+                   
                 </div>
             </div>
         </section>
@@ -184,75 +143,121 @@
                 <div class="title">My life</div>
                 <div class="life-content">
                     <div class="photoBox">
-                        <div class="photo">
-                            <img src="./images/life1.jpg" alt="">
+                        <div v-for="item in lifeImg" class="photo">
+                            <img :src="item.src" alt="" @click="openImgFn">
                         </div>
-                        <div class="photo">
-                            <img src="./images/life2.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life3.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life4.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life5.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life6.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life7.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life8.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life1.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life2.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life3.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life4.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life5.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life6.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life7.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="./images/life8.jpg" alt="">
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="life-model" v-show="openImg">
+                <div class="lifeback" @click="openImgFn"></div>
+                <img :src="modelsrc" alt="">
+            </div>
+
+        <footer>
+            <span>Copyright @2021<strong @click="top"> LiChengYan</strong>  All Rights Reserved.</span>
+        </footer>
     </div>
     
-    <footer>
-        <span>Copyright @2021<a href="#" title=""> LiChengYan</a>  All Rights Reserved.</span>
-    </footer>
+   
     <script src="./js/vue.js"></script>
     <script src="./js/script.js"></script>
     <script>
         const {ref, reactive} = Vue;
         const App = {
             setup(){
+                const modelsrc = ref("");
+                const openImg = ref(false);
                 const openMenu = ref(false);
+                const lifeImg = reactive([
+                    {src:"./images/life1.jpg"},
+                    {src:"./images/life2.jpg"},
+                    {src:"./images/life3.jpg"},
+                    {src:"./images/life4.jpg"},
+                    {src:"./images/life5.jpg"},
+                    {src:"./images/life6.jpg"},
+                    {src:"./images/life7.jpg"},
+                    {src:"./images/life8.jpg"},
+                    {src:"./images/life1.jpg"},
+                    {src:"./images/life2.jpg"},
+                    {src:"./images/life3.jpg"},
+                    {src:"./images/life4.jpg"},
+                    {src:"./images/life5.jpg"},
+                    {src:"./images/life6.jpg"},
+                    {src:"./images/life7.jpg"},
+                    {src:"./images/life8.jpg"},
+                ])
+                const skills = reactive([
+                    {name:"HTML",bars:"90%"},
+                    {name:"CSS",bars:"50%"},
+                    {name:"JavaScript",bars:"80%"},
+                    {name:"PHP",bars:"70%"},
+                    {name:"MySQL",bars:"60%"},
+                    {name:"Python",bars:"75%"},
+                ])
+                const worksCard = reactive([
+                    {imgsrc:"./images/9saio.jpg",
+                     href:"https://jiousaio.com/",
+                     title:"九霄空間設計JIOUSAIO",
+                     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+                    },
+                    {imgsrc:"./images/cst.png",
+                     href:"https://carboncst.com/",
+                     title:"臺灣碳材料學會CST",
+                     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+                    },
+                    {imgsrc:"./images/evone.jpg",
+                     href:"https://www.evoneic.com/",
+                     title:"憶旺智慧eVone",
+                     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+                    },
+                    {imgsrc:"./images/lecture.png",
+                     href:"https://jiousaio.com/Lecture/",
+                     title:"中原大學魷魚遊戲",
+                     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+                    },
+                    {imgsrc:"./images/9.jpg",
+                     href:"https://jiousaioshop.com/",
+                     title:"九霄模型",
+                     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+                    },
+                    {imgsrc:"./images/colorful.jpg",
+                     href:"https://www.ice-finland.club/",
+                     title:"冰芬文教",
+                     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+                    },
+                    
+                ])
+                const openImgFn = (e)=>{
+                    openImg.value = !openImg.value;
+                    modelsrc.value = e.target.src
+                    
+                }
                 const openMenuFn = ()=>{
                     openMenu.value = !openMenu.value;
                 }
-                
-                return {openMenu, openMenuFn};
+                const top = ()=>{
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+                const see = ()=>{
+                    document.body.scrollTop = 700;
+                    document.documentElement.scrollTop = 700;
+                }
+                return {openMenu, 
+                        openMenuFn, 
+                        lifeImg, 
+                        skills, 
+                        worksCard, 
+                        openImg, 
+                        openImgFn,
+                        modelsrc,
+                        top,
+                        see,};
+                        
             }
         };
         Vue.createApp(App).mount("#app");
