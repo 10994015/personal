@@ -24,7 +24,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .7);
     padding: 25px 100px;
     transition: all .3s ease;
     z-index: 999;
@@ -172,6 +172,7 @@ section .title::after{
     height: 500px;
     object-fit: cover;
     border-radius: 6px;
+    cursor: pointer;
 }
 .about .about-content .right{
     width:55%;
