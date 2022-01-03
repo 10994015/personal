@@ -63,27 +63,14 @@
                     <h2>My services</h2>
                 </div>
                 <div class="services-content">
-                    <div class="card">
+                    <div class="card" v-for="item in services">
                         <div class="box">
-                            <i class="fas fa-paint-brush"></i>
-                            <div class="text">Web Design</div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis eum officiis aliquam maxime aspernatur at laboriosam ipsa aperiam in culpa repellendus sequi dolorem fugiat molestias neque cumque porro, cupiditate molestiae?</p>
+                            <i :class="item.class"></i>
+                            <div class="text">{{item.title}}</div>
+                            <p>{{item.content}}</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="box">
-                            <i class="fas fa-chart-line"></i>
-                            <div class="text">Website setup</div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis eum officiis aliquam maxime aspernatur at laboriosam ipsa aperiam in culpa repellendus sequi dolorem fugiat molestias neque cumque porro, cupiditate molestiae?</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <i class="fas fa-code"></i>
-                            <div class="text">Artificial intelligence</div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis eum officiis aliquam maxime aspernatur at laboriosam ipsa aperiam in culpa repellendus sequi dolorem fugiat molestias neque cumque porro, cupiditate molestiae?</p>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </section>

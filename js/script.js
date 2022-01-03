@@ -11,6 +11,11 @@ const App = {
         const modelsrc = ref("");
         const openImg = ref(false);
         const openMenu = ref(false);
+        const services = reactive([
+            {title:"Web Design",class:"fas fa-paint-brush",content:""},
+            {title:"Website setup",class:"fas fa-chart-line",content:""},
+            {title:"Artificial intelligence",class:"fas fa-code",content:""},
+        ])
         const exp = reactive([
             {name:"中原大學碩士班"},
             {name:"憶旺智慧工程師"},
@@ -55,32 +60,32 @@ const App = {
             {imgsrc:"./images/9saio.jpg",
              href:"https://jiousaio.com/",
              title:"九霄空間設計JIOUSAIO",
-             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+             content:"幫助九霄空間設計公司架設公司形象網站",
             },
             {imgsrc:"./images/cst.png",
              href:"https://carboncst.com/",
              title:"臺灣碳材料學會CST",
-             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+             content:"為臺灣碳材料學會(CST)架設完整前後端網站",
             },
             {imgsrc:"./images/evone.jpg",
              href:"https://www.evoneic.com/",
              title:"憶旺智慧eVone",
-             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+             content:"為憶旺智慧架設公司形象網站",
             },
             {imgsrc:"./images/lecture.png",
              href:"https://jiousaio.com/Lecture/",
              title:"中原大學魷魚遊戲",
-             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+             content:"與中原大學衛保組合作，撰寫一套知識網頁遊戲",
             },
             {imgsrc:"./images/9.jpg",
              href:"https://jiousaioshop.com/",
              title:"九霄模型",
-             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+             content:"架設販賣模型的完整購物網站",
             },
             {imgsrc:"./images/colorful.jpg",
              href:"https://www.ice-finland.club/",
              title:"冰芬文教",
-             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt ipsa quidem",
+             content:"為冰芬文教補習班撰寫網頁前端",
             },
             
         ])
@@ -110,7 +115,8 @@ const App = {
                 modelsrc,
                 top,
                 see,
-                exp,};
+                exp,
+                services,};
                 
     }
 };
