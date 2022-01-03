@@ -482,8 +482,11 @@ footer span strong{
        margin:auto 0 auto 50px;
    }
    .max-width{
-    padding: 0 80px;
-}
+        padding: 0 80px;
+    }
+    .life .life-content .photoBox{
+        width:905px;
+    }
 }
 
 
@@ -560,6 +563,9 @@ footer span strong{
         width:100%;
         margin-bottom: 35px;
     }
+    .life .life-content .photoBox{
+        width:605px;
+    }
    
 }
 @media (max-width:690px){
@@ -576,6 +582,9 @@ footer span strong{
     }
     .works .carousel .card{
         width:100%;
+    }
+    .life .life-content .photoBox{
+        width:305px;
     }
 }
 @media (max-width:500px){
