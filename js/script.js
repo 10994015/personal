@@ -50,10 +50,10 @@ const App = {
         ])
         const skills = reactive([
             {name:"HTML",bars:"90%"},
-            {name:"CSS",bars:"50%"},
+            {name:"CSS",bars:"80%"},
             {name:"JavaScript",bars:"80%"},
             {name:"PHP",bars:"70%"},
-            {name:"MySQL",bars:"60%"},
+            {name:"MySQL",bars:"70%"},
             {name:"Python",bars:"75%"},
         ])
         const worksCard = reactive([
