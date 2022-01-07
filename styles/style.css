@@ -72,6 +72,7 @@ header .menu-btn{
 .home{
     display: flex;
     background: url("../images/bg.jpg") no-repeat;
+    background-size:cover;
     background-position: left center;
     height: 100vh;
     color:#fff;
